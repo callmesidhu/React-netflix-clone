@@ -7,11 +7,18 @@
           padding:20px;
           overflow-x: scroll;
           overflow-y: hidden;
-}
-.poster{
-          max-height: 250px;
-          margin-right: 10px;
+          
 }
 .posters::-webkit-scrollbar{
-          display: none;
+    display: none;
+}
+.poster{
+          margin-top: 15px;
+          max-height: 250px;
+          margin-right: 15px;
+}
+
+.small-poster{
+          max-height: 150px;
+          margin-right: 15px;
 }

@@ -9,7 +9,8 @@ function App() {
     <div>
       <NavBar/>
       <Banner/>
-      <Post/>
+      <Post title='Netflix Originals'/>
+      <Post title='Action Movies' isSmall={true}/>
     </div>
   )
 }

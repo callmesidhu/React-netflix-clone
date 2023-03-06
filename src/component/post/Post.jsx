@@ -1,27 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './post.css';
+import axios from '../../Axios.jsx'
+import {API_KEY, imageUrl} from '../../constants/Constants.jsx'
 
-function Post() {
+function Post(props) {
+  const [movies, setMovies] =  useState([])
+  useEffect(() => {
+    axios.get(`discover/tv?api_key=${API_KEY}&with_networks=213`).then(response=>{
+      console.log(response.data)
+      setMovies(response.data.results)
+    }).catch(err=>{
+      alert('Please verify the code')
+    })
+  }, [])
   return (
     <div className='row'>
-          <h2>title</h2>
+          <h2>{props.title}</h2>
           <div className='posters'>
-                    <img className="poster" src="https://c4.wallpaperflare.com/wallpaper/858/502/420/transformers-age-of-extinction-movies-optimus-prime-wallpaper-preview.jpg"></img>
-                    <img className="poster" src="https://c4.wallpaperflare.com/wallpaper/858/502/420/transformers-age-of-extinction-movies-optimus-prime-wallpaper-preview.jpg"></img>
-                    <img className="poster" src="https://c4.wallpaperflare.com/wallpaper/858/502/420/transformers-age-of-extinction-movies-optimus-prime-wallpaper-preview.jpg"></img>
-                    <img className="poster" src="https://c4.wallpaperflare.com/wallpaper/858/502/420/transformers-age-of-extinction-movies-optimus-prime-wallpaper-preview.jpg"></img>
-                    <img className="poster" src="https://c4.wallpaperflare.com/wallpaper/858/502/420/transformers-age-of-extinction-movies-optimus-prime-wallpaper-preview.jpg"></img>
-                    <img className="poster" src="https://c4.wallpaperflare.com/wallpaper/858/502/420/transformers-age-of-extinction-movies-optimus-prime-wallpaper-preview.jpg"></img>
-                    <img className="poster" src="https://c4.wallpaperflare.com/wallpaper/858/502/420/transformers-age-of-extinction-movies-optimus-prime-wallpaper-preview.jpg"></img>
-                    <img className="poster" src="https://c4.wallpaperflare.com/wallpaper/858/502/420/transformers-age-of-extinction-movies-optimus-prime-wallpaper-preview.jpg"></img>
-                    <img className="poster" src="https://c4.wallpaperflare.com/wallpaper/858/502/420/transformers-age-of-extinction-movies-optimus-prime-wallpaper-preview.jpg"></img>
-                    <img className="poster" src="https://c4.wallpaperflare.com/wallpaper/858/502/420/transformers-age-of-extinction-movies-optimus-prime-wallpaper-preview.jpg"></img>
-                    <img className="poster" src="https://c4.wallpaperflare.com/wallpaper/858/502/420/transformers-age-of-extinction-movies-optimus-prime-wallpaper-preview.jpg"></img>
-                    <img className="poster" src="https://c4.wallpaperflare.com/wallpaper/858/502/420/transformers-age-of-extinction-movies-optimus-prime-wallpaper-preview.jpg"></img>
-          </div>
-      
+          {movies.map((obj)=>
+            <img className={props.isSmall ? 'small-poster' : 'poster'} src={`${imageUrl+obj.backdrop_path}`}></img>
+          )}
+          
+       </div>
     </div>
   )
 }
-
+                            
 export default Post
