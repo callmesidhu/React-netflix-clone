@@ -1,4 +1,4 @@
-import {originals,action, trending} from './urls'
+import {originals,action, trending, comedy, horror, romantic} from './urls'
 import React from 'react'
 import './App.css'
 import NavBar from './component/navbar/NavBar.jsx'
@@ -12,6 +12,10 @@ function App() {
       <Banner url={trending}/>
       <Post url={originals} title='Netflix Originals'/>
       <Post url={action} title='Action Movies' isSmall={true}/>
+      <Post url={horror} title='Horror Movies' isSmall={true}/>
+      <Post url={romantic} title='Romantic Movies' isSmall={true}/>
+      <Post url={trending} title='Adventure Movies' isSmall={true}/>
+      <Post url={comedy} title='Comedy Movies' isSmall={true}/>
     </div>
   )
 }

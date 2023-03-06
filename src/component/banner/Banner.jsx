@@ -2,16 +2,15 @@ import axios from '../../Axios.jsx'
 import {useEffect, useState} from "react";
 import {imageUrl} from "../../constants/Constants.jsx";
 import "./Banner.css";
-import { trending } from '../../urls.jsx';
 
-function Banner() {
+function Banner(props) {
   const [movie, setMovie] = useState()
   useEffect(() => {
-    axios.get(`${trending}`).then((response)=>{
+    axios.get(props.url).then((response)=>{
       setMovie(response.data.results[1])
       console.log(response.data)
     }).catch(err=>{
-      //alert('Please verify the code')
+      alert('Please verify the code')
     })
   }, [])
   

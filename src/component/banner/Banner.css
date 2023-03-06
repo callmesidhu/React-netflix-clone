@@ -1,6 +1,6 @@
 .banner{
           background-size: cover;
-          height: 550px;
+          height: 600px;
           color: white;
 }
 .content{
@@ -50,7 +50,7 @@
 
 }
 .fade-bottom{
-          height: 14rem;
+          height: 16.9rem;
           background-image: linear-gradient(to bottom , rgba(255,0,0,0), rgba(17, 17, 17, 1)
           );
 }

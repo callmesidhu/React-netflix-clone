@@ -1,5 +1,5 @@
 .navbar{
-          background-color: #111;
+        background-image: linear-gradient(#111, rgba(255,0,0,0));
           position: fixed;
           top: 0;
           width: 100%;
