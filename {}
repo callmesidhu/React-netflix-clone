@@ -1,0 +1,19 @@
+{movie ? movie.title : (movie.name ? movie.name : "")
+
+
+
+function App() {
+  const [counter, setCounter] = useState(0);
+
+  useEffect(() => {
+    setCounter(counter + 1);
+  }, []);
+
+  return (
+    <div>
+      <h1>Counter: {counter}</h1>
+    </div>
+  );
+}
+
+export default App;

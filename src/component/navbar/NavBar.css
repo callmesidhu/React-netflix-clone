@@ -1,6 +1,5 @@
 
 .navbar{
-          /*background-image: linear-gradient(#111, rgba(255,0,0,0));*/
           background-color: #111;
           z-index: 1;
           position: fixed;

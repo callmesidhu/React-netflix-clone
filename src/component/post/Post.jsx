@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import './post.css';
-import axios from '../../Axios.jsx'
-import {imageUrl} from '../../constants/Constants.jsx'
-import YouTube from 'react-youtube';
 import { API_KEY } from '../../constants/Constants.jsx';
+import {imageUrl} from '../../constants/Constants.jsx'
+import React, { useEffect, useState } from 'react'
+import YouTube from 'react-youtube';
+import axios from '../../Axios.jsx'
+import './post.css';
+
+
 
 
 function Post(props) {
@@ -32,9 +34,7 @@ function Post(props) {
    const opts = {
     height: '400',
     width: '100%',
-    playerVars: { // https://developers.google.com/youtube/player_parameters
-      autoplay: 1,
-    }
+    playerVars: {autoplay: 1}
   };
 return (
 
@@ -58,3 +58,36 @@ return (
 export default Post;
 
 
+/*
+<---drag and scroll in x-direction(for adding more feature)---->
+
+
+
+
+const posters = document.querySelector('.posters');
+
+let isDown = false;
+let startX, scrollLeft;
+
+content.addEventListener('mousedown', (e) => {
+  isDown = true;
+  startX = e.pageX - content.offsetLeft;
+  scrollLeft = content.scrollLeft;
+});
+
+content.addEventListener('mouseleave', () => {
+  isDown = false;
+});
+
+content.addEventListener('mouseup', () => {
+  isDown = false;
+});
+
+content.addEventListener('mousemove', (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - content.offsetLeft;
+  const walk = (x - startX) * 1.5;
+  content.scrollLeft = scrollLeft - walk;
+});
+*/
