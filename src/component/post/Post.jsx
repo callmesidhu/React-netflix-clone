@@ -7,7 +7,7 @@ import { API_KEY } from '../../constants/Constants.jsx';
 
 function Post(props) {
   const [movies, setMovies] =  useState([])
-  const [urlId, setUrlId] = useState([])
+  const [urlId, setUrlId] = useState()
   useEffect(() => {
     axios.get(props.url).then(response=>{
       console.log(response.data)
@@ -17,15 +17,8 @@ function Post(props) {
     })
   }, [])
 
- const opts = {
-    height: '390',
-    width: '100%',
-    playerVars: { // https://developers.google.com/youtube/player_parameters
-      autoplay: 1,
-    }
-  };
+
   const movieTrailerId =(id)=>{
-  console.log(id)
   axios.get(`/movie/${id}/videos?api_key=${API_KEY}&language=en-US`).then(response=>{
         console.log(response.data)
         if(response.data.results.lenght!==0){
@@ -34,6 +27,14 @@ function Post(props) {
             console.log('empty Array')
         }
    })}
+
+   const opts = {
+    height: '390',
+    width: '100%',
+    playerVars: { // https://developers.google.com/youtube/player_parameters
+      autoplay: 1,
+    }
+  };
 return (
     <div className='row'>
           <h2>{props.title}</h2>
@@ -43,9 +44,11 @@ return (
           )}
           
        </div>
-        {urlId && <YouTube opts={opts} videoId={urlId.key}/>}
-    </div>
+       
+       <div style={{ display: urlId ? 'block' : 'none' }}>{urlId && <YouTube videoId={urlId.key} opts={opts}/>}</div>
+       </div>
   )
+  
 }
                             
 export default Post;
