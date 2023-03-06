@@ -5,6 +5,7 @@ import {imageUrl} from '../../constants/Constants.jsx'
 import YouTube from 'react-youtube';
 import { API_KEY } from '../../constants/Constants.jsx';
 
+
 function Post(props) {
   const [movies, setMovies] =  useState([])
   const [urlId, setUrlId] = useState()
@@ -29,13 +30,16 @@ function Post(props) {
    })}
 
    const opts = {
-    height: '390',
+    height: '400',
     width: '100%',
     playerVars: { // https://developers.google.com/youtube/player_parameters
       autoplay: 1,
     }
   };
 return (
+
+
+
     <div className='row'>
           <h2>{props.title}</h2>
           <div className='posters'>
@@ -50,5 +54,7 @@ return (
   )
   
 }
-                            
+                         
 export default Post;
+
+
