@@ -1,5 +1,4 @@
 .banner{
-          background-image: url('https://images2.alphacoders.com/845/845641.jpg');
           background-size: cover;
           height: 550px;
           color: white;
@@ -17,10 +16,10 @@
 }
 .button{
           color: white;
-          width: 60px;
+          width: 110px;
           border:none;
           outline: none;
-          font-weight: 700;
+          font-weight: 800;
           border-radius: 5px;
           padding-left: 2rem;
           padding-right: 2rem;
@@ -28,10 +27,11 @@
           padding-bottom: 0.5rem;
           background-color: rgba(51,51,51,0.5);
           cursor: pointer;
-          margin-right: 1rem;
+          margin-right: 2rem;
           display: flex;
           display:inline-block;
           text-align: center;
+          white-space: nowrap;
           
 }
 .button:hover{
@@ -45,7 +45,7 @@
           padding-top: 1rem;
           font-size: 1rem;
           height: 80px;
-          max-width: 360px;
+          max-width: 500px;
           text-shadow: 1px 1px 7px #111;
 
 }
