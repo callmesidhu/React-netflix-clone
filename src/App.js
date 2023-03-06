@@ -1,3 +1,4 @@
+import {originals,action, trending} from './urls'
 import React from 'react'
 import './App.css'
 import NavBar from './component/navbar/NavBar.jsx'
@@ -8,9 +9,9 @@ function App() {
   return (
     <div>
       <NavBar/>
-      <Banner/>
-      <Post title='Netflix Originals'/>
-      <Post title='Action Movies' isSmall={true}/>
+      <Banner url={trending}/>
+      <Post url={originals} title='Netflix Originals'/>
+      <Post url={action} title='Action Movies' isSmall={true}/>
     </div>
   )
 }

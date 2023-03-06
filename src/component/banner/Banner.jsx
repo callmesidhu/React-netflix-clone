@@ -1,14 +1,17 @@
 import axios from '../../Axios.jsx'
 import {useEffect, useState} from "react";
-import {API_KEY, imageUrl} from "../../constants/Constants.jsx";
+import {imageUrl} from "../../constants/Constants.jsx";
 import "./Banner.css";
+import { trending } from '../../urls.jsx';
 
 function Banner() {
   const [movie, setMovie] = useState()
   useEffect(() => {
-    axios.get(`trending/all/week?api_key=${API_KEY}&language=en-US`).then((response)=>{
+    axios.get(`${trending}`).then((response)=>{
       setMovie(response.data.results[1])
       console.log(response.data)
+    }).catch(err=>{
+      //alert('Please verify the code')
     })
   }, [])
   

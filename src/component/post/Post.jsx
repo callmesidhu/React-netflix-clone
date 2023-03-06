@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import './post.css';
 import axios from '../../Axios.jsx'
-import {API_KEY, imageUrl} from '../../constants/Constants.jsx'
+import {imageUrl} from '../../constants/Constants.jsx'
 
 function Post(props) {
   const [movies, setMovies] =  useState([])
   useEffect(() => {
-    axios.get(`discover/tv?api_key=${API_KEY}&with_networks=213`).then(response=>{
+    axios.get(props.url).then(response=>{
       console.log(response.data)
       setMovies(response.data.results)
     }).catch(err=>{
