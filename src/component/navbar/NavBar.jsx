@@ -10,7 +10,7 @@ function NavBar() {
         <a href="#tvShows">TV Shows</a>
         <a href="#movies">Movies</a>
         <a href="#originals">Originals</a>
-        <a href="#">Recently Added</a>
+        <a href="#recently">Recently Added</a>
       </div>
      <img className="avatar" src="https://cdn-icons-png.flaticon.com/512/924/924915.png" alt="avatar" ></img>
       

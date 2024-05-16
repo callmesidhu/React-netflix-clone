@@ -13,7 +13,7 @@ function Banner(props) {
       console.log(response.data)
 
     })
-  }, [])
+  }, [props.url])
 
 
   return (

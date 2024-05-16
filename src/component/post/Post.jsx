@@ -18,7 +18,7 @@ function Post(props) {
     }).catch(err=>{
       alert('Please verify the code')
     })
-  }, [])
+  }, [props.url])
 
 
   const movieTrailerId =(id)=>{
@@ -44,7 +44,7 @@ return (
           <h2>{props.title}</h2>
           <div className='posters'>
           {movies.map((obj)=>
-            <img onClick={()=>movieTrailerId(obj.id)} className={props.isSmall ? 'small-poster' : 'poster'} src={`${imageUrl+obj.backdrop_path}`}></img>
+            <img onClick={()=>movieTrailerId(obj.id)} className={props.isSmall ? 'small-poster' : 'poster'} src={`${imageUrl+obj.backdrop_path}`} alt=''></img>
           )}
           
        </div>
